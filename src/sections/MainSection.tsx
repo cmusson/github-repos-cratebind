@@ -17,7 +17,6 @@ const MainSection = () => {
         setError("invalid request");
       }
       const data = (await res.json()) as IRepo[];
-      console.log(data);
       const repositories = data
         .filter((repo) => !repo.fork)
         .sort((a, b) => b.stargazers_count - a.stargazers_count);
